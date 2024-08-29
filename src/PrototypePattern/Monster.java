@@ -23,7 +23,15 @@ public abstract class Monster implements IMonster{
 		return this.defend;
 	}
 	
+	public void setHp(int hp) {
+		this.health = hp;
+	}
+	
 	public abstract IMonster clone();
+	
+	public void attack(Monster foe) {
+		foe.setHp(foe.getHp() - this.getAtk());
+	}
 	
 	public String toString()
 	{
